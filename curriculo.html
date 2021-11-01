@@ -6,39 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="https://icons.getbootstrap.com/assets/icons/file-earmark-person.svg" type="image/x-icon">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
         :root {
             --bs-font-sans-serif: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --bs-body-font-size: .9rem;
         }
-/* */
+        a {
+            color: unset;
+            text-decoration: none;
+        }
+
+        h3,
+        h2 {
+            padding-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            background-color: rgba(247, 247, 247, 0.671);
+        }
+
         h3 {
             font-style: italic !important;
         }
     </style>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.js"></script>
-    <title>Valério</title>
+    <title>Valério | Currículo</title>
 </head>
 
-<body>
+<body onbeforeprint="antesImpressao()" onafterprint="depoisImpressao()">
     <main class="container">
         <article class="row">
             <div class="col-12">
                 <h1>Valério Luz Hasman Junior</h1>
                 <address class="fst-italic">
                     12509-710 – R. Filadélfio Santos Réis, 53, Vila dos Comerciarios I – Guaratinguetá – SP<br>
-                    (12) 99732-9785<br>
-                    <a href="mailto:valerio.hasman@gmail.com" target="_blank">valerio.hasman@gmail.com</a><br>
-                    <a href="https://github.com/ValerioHasman/" target="_blank">GitHub</a><br>
-                    <a href="https://www.linkedin.com/in/valerio-hasman/" target="_blank">Linkedin</a><br>
+                    <a href="tel:12997329785"><i class="bi bi-telephone"></i> (12) 99732-9785</a><br>
+                    <a href="mailto:valerio.hasman@gmail.com" target="_blank"><i class="bi bi-envelope"></i> valerio.hasman@gmail.com</a><br>
+                    <a href="https://github.com/ValerioHasman/" target="_blank"><i class="bi bi-github"></i> https://github.com/ValerioHasman/</a><br>
+                    <a href="https://www.linkedin.com/in/valerio-hasman/" target="_blank"><i class="bi bi-linkedin"></i> https://www.linkedin.com/in/valerio-hasman/</a><br>
                 </address>
                 <h2>Objetivo</h2>
                 <p>Atuar na área da informática em geral seja na área da análise e desenvolvimento de sistemas ou também
                     em
                     manutenções computadores. </p>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-md-6 col-12" id="cole">
                 <h2>Formações Acadêmicas</h2>
                 <h3>Cursando Nível Superior:</h3>
                 <p>Analise e Desenvolvimento de Software ― Faculdade Tecnológica Estadual, FATEC Guaratinguetá ― 2019 -
@@ -58,17 +75,18 @@
                 <p>Lógica de Programação ― Escola: Brasil Treina ― 64 Horas ― 2019. </p>
                 <p>Informática Profissionalizante ― Escola: Brasil Treina ― 75 Horas ― 18/04/2017.</p>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-md-6 col-12" id="cold">
                 <h2>Habilidades:</h2>
                 <ul>
-                    <li>Formatação, configuração e Conselho;</li>
-                    <li>Csharp;</li>
-                    <li>Java: Orientadas a objetos;</li>
+                    <li>Formatação, configuração e Conselhos;</li>
+                    <li>Recuperação de memórias com bad block pela controladora;</li>
+                    <li>Csharp: Asp.Net, Web Forms, MVC, POO;</li>
+                    <li>Java: POO;</li>
                     <li>JavaScript: Programação Funcional;</li>
                     <li>UML;</li>
                     <li>HTML;</li>
-                    <li>CSS;</li>
-                    <li>PHP: Procedural, Orientadas a objetos, MVC;</li>
+                    <li>CSS: Bootstrap;</li>
+                    <li>PHP: Procedural, MVC, POO;</li>
                     <li>Pacote office</li>
                     <li>Banco de dados: Mysql;</li>
                     <li>Inglês;</li>
@@ -80,6 +98,24 @@
             </div>
         </article>
     </main>
+    <script>
+        function antesImpressao(){
+            var cole = document.getElementById("cole");
+            var cold = document.getElementById("cold");
+            cole.classList.remove("col-md-6", "col-12");
+            cold.classList.remove("col-md-6", "col-12");
+            cole.classList.add("col-6");
+            cold.classList.add("col-6");
+        }
+        function depoisImpressao(){
+            var cole = document.getElementById("cole");
+            var cold = document.getElementById("cold");
+            cole.classList.remove("col-6");
+            cold.classList.remove("col-6");
+            cole.classList.add("col-md-6", "col-12");
+            cold.classList.add("col-md-6", "col-12");
+        }
+    </script>
 </body>
 
 </html>

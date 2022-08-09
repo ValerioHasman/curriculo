@@ -19,7 +19,7 @@
 
         :root {
             --bs-font-sans-serif: 'Nunito', sans-serif;
-            --bs-body-font-size: 0.80rem;
+            --bs-body-font-size: 0.88rem;
             --bs-body-color: #000;
         }
         *::selection {
@@ -66,7 +66,7 @@
 </head>
 
 <body onbeforeprint="antesImpressao()" onafterprint="depoisImpressao()" id="icons-body">
-    <main class="container">
+    <main id="principal" class="container">
         <article class="row">
             <div class="col-12 mt-2">
                 <button type="button" class="btn btn-secondary desprint mt-2 mb-2" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-6 col-12" id="cole">
                 <h2>Formações Acadêmicas:</h2>
-                <h3>Cursando Nível Superior:</h3>
+                <h3>Curso Nível Superior:</h3>
                 <p>Análise e Desenvolvimento de Software ― Faculdade Tecnológica Estadual, FATEC Guaratinguetá ― 08/2019 - 07/2022.
                 </p>
                 <h3>Curso Comportamento Empreendedor:</h3>
@@ -137,18 +137,22 @@
         function antesImpressao(){
             var cole = document.getElementById("cole");
             var cold = document.getElementById("cold");
+            var main = document.getElementById("principal")
             cole.classList.remove("col-md-6", "col-12");
             cold.classList.remove("col-md-6", "col-12");
+            main.classList.remove("container");
             cole.classList.add("col-6");
             cold.classList.add("col-6");
         }
         function depoisImpressao(){
             var cole = document.getElementById("cole");
             var cold = document.getElementById("cold");
+            var main = document.getElementById("principal")
             cole.classList.remove("col-6");
             cold.classList.remove("col-6");
             cole.classList.add("col-md-6", "col-12");
             cold.classList.add("col-md-6", "col-12");
+            main.classList.add("container");
         }
     </script>
 </body>

@@ -1,184 +1,284 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="shortcut icon" href="http://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="shortcut icon"
+    href="http://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
-        :root {
-            --bs-font-sans-serif: 'Nunito', sans-serif;
-            --bs-body-font-size: 0.88rem;
-            --bs-body-color: #000;
-        }
-        *::selection {
-            background-color: #ddf;
-        }
+    :root{
+      --bs-font-sans-serif: 'Nunito', sans-serif;
+      --bs-body-font-size: 0.88rem;
+    }
+    [data-bs-theme=light] {
+      --temaCor: #ddf;
+    }
+    [data-bs-theme=dark] {
+      --temaCor: #550;
+    }
 
-        a {
-            color: unset;
-            text-decoration: none;
-        }
+    *::selection {
+      background-color: var(--temaCor);
+    }
 
-        h2 {
-            background-color: #eee;
-            border-radius: 0.3rem;
-            margin: 6px 0 1px 0;
-        }
+    a {
+      color: unset;
+      text-decoration: none;
+    }
 
-        h3, h2 {
-            font-size: 1.11rem;
-            padding: 3px 2px 2px 5px;
-            margin: 0.5rem 0 0 0;
-        }
+    h2 {
+      background-color: var(--bs-secondary-bg);
+      border-radius: 0.3rem;
+      margin: 6px 0 1px 0;
+    }
 
-        h3 {
-            font-style: italic !important;
-        }
+    h3,
+    h2 {
+      font-size: 1.11rem;
+      padding: 3px 2px 2px 5px;
+      margin: 0.5rem 0 0 0;
+    }
 
-        p {
-            text-align: justify;
-            margin: 0;
-        }
+    h3 {
+      font-style: italic !important;
+    }
 
-        li, p{
-            line-height: 1.089rem;
-        }
-        @media print{
-            .desprint{
-                display: none;
-            }
-        }
-    </style>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"></script>
-    <title>Valério_Currículo</title>
+    p {
+      text-align: justify;
+      margin: 0;
+    }
+
+    li,
+    p {
+      line-height: 1.089rem;
+    }
+
+    @media print {
+      .desprint {
+        display: none;
+      }
+    }
+
+    #depositoSVG {
+      height: var(--altura);
+    }
+
+    #depositoSVG svg {
+      max-width: var(--altura);
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.js"></script>
+  <title>Valério_Currículo</title>
 </head>
 
 <body onbeforeprint="antesImpressao()" onafterprint="depoisImpressao()" id="icons-body">
-    <main id="principal" class="container">
-        <article class="row">
-            <div class="col-12 mt-2">
-                <button type="button" class="btn btn-secondary desprint mt-2 mb-2" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
-                <h1>Valério Luz Hasman Junior</h1>
-                <address class="fst-italic">
-                    <p>Vila dos Comerciários I, Guaratinguetá/SP</p>
-                    <p><a href="tel:012997329785"><i class="bi bi-telephone"></i>&nbsp;<i class="bi bi-whatsapp"></i>&nbsp;(12) 99732-9785</a></p>
-                    <p><a href="mailto:valerio.hasman@gmail.com" target="_blank"><i class="bi bi-envelope"></i>&nbsp;valerio.hasman@gmail.com</a></p>
-                    <p><a href="https://github.com/ValerioHasman/" target="_blank"><i class="bi bi-github"></i>&nbsp;https://github.com/ValerioHasman/</a></p>
-                    <p><a href="https://www.linkedin.com/in/valerio-hasman/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;https://www.linkedin.com/in/valerio-hasman/</a></p>
-                </address>
-                <h2>Objetivo:</h2>
-                <p>Atuar na área como analista e desenvolvedor de sistemas seja na posição de back-end, front-end ou database administrator.</p>
-            </div>
-            <div class="col-md-6 col-12" id="cole">
-                <h2>Formações Acadêmicas:</h2>
-                <h3>Curso Nível Superior:</h3>
-                <p>Análise e Desenvolvimento de Sistemas ― Faculdade Tecnológica Estadual, FATEC Guaratinguetá ― 08/2019 - 07/2022.
-                </p>
-                <h3>Curso Comportamento Empreendedor:</h3>
-                <p>StartUps e Inovação em Negócios ― Escola: Unieducar Inteligência Educacional ― 09/05/2020 a 20/05/2020, com carga horária de 4 horas.</p>
-                <h3>Curso da Cisco Networking Academy™:</h3>
-                <p>CCNA R&S: Introduction to Networks ― FATEC Guaratinguetá ― 30/11/2021.</p>
-                <p>IT Essentials: PC Hardware and Software ― FATEC Guaratinguetá ― 02/12/2019.</p>
-                <h3>Curso Nível Técnico:</h3>
-                <p>Técnico em Informática ― Escola: Pref.º Alfredo de Barros Santos ― 2017-2018.</p>
-                <p>2º Grau completo; Escola: Prof.ª Dinah Motta Runha.</p>
-                <h3>Cursos Nível Profissionalizante:</h3>
-                <p>Lógica de Programação ― Escola: Brasil Treina ― 64 Horas ― 2019. </p>
-                <p>Informática Profissionalizante ― Escola: Brasil Treina ― 75 Horas ― 18/04/2017.</p>
-                <h3>Cursos On-Line:</h3>
+  <main id="principal" class="container">
+    <article class="row">
+      <div class="col-12 mt-2">
+        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 bg-gradient" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
+        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 bg-gradient" id="botaoQR" onclick="ativaQR()"><i class="bi bi-qr-code"></i>&nbsp;QR Code</button>
+        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 bg-gradient" id="botaoTema" onclick="modoTema()"><i class="bi bi-brightness-high"></i></button>
+        <h1>Valério Luz Hasman Junior</h1>
+        <div class="row justify-content-between">
+          <div class="col-auto" id="cabeca">
+            <address class="fst-italic">
+              <p>Vila dos Comerciários I, Guaratinguetá/SP</p>
+              <p><a href="tel:012997329785"><i class="bi bi-telephone"></i>&nbsp;<i class="bi bi-whatsapp"></i>&nbsp;(12)
+                  99732-9785</a></p>
+              <p><a href="mailto:valerio.hasman@gmail.com" target="_blank"><i
+                    class="bi bi-envelope"></i>&nbsp;valerio.hasman@gmail.com</a></p>
+              <p><a href="https://github.com/ValerioHasman/" target="_blank"><i
+                    class="bi bi-github"></i>&nbsp;https://github.com/ValerioHasman/</a></p>
+              <p><a href="https://www.linkedin.com/in/valerio-hasman/" target="_blank"><i
+                    class="bi bi-linkedin"></i>&nbsp;https://www.linkedin.com/in/valerio-hasman/</a></p>
+            </address>
+          </div>
+          <div class="col-auto" id="depositoSVG"></div>
+        </div>
+        
+        <h2 class="bg-gradient">Objetivo:</h2>
+        <p>Atuar na área como analista e desenvolvedor de sistemas seja na posição de back-end, front-end ou
+          database administrator.</p>
+      </div>
+      <div class="col-md-6 col-12" id="cole">
+        <h2 class="bg-gradient">Formações Acadêmicas:</h2>
+        <h3>Curso Nível Pós-Graduação:</h3>
+        <p>Big Data & Machine Learning – UNISAL Remoto – 03/2023-12/2023</p>
+        <h3>Curso Nível Superior:</h3>
+        <p>Análise e Desenvolvimento de Sistemas – Faculdade Tecnológica Estadual, FATEC Guaratinguetá –
+          08/2019-07/2022.
+        </p>
+        <h3>Curso Comportamento Empreendedor:</h3>
+        <p>StartUps e Inovação em Negócios – Escola: Unieducar Inteligência Educacional – 09/05/2020 a
+          20/05/2020, com carga horária de 4 horas.</p>
+        <h3>Curso da Cisco Networking Academy™:</h3>
+        <p>CCNA R&S: Introduction to Networks – FATEC Guaratinguetá – 30/11/2021.</p>
+        <p>IT Essentials: PC Hardware and Software – FATEC Guaratinguetá – 02/12/2019.</p>
+        <h3>Curso Nível Técnico:</h3>
+        <p>Técnico em Informática – Escola: Pref.º Alfredo de Barros Santos – 2017-2018.</p>
+        <p>2º Grau completo; Escola: Prof.ª Dinah Motta Runha.</p>
+        <h3>Cursos Nível Profissionalizante:</h3>
+        <p>Lógica de Programação – Escola: Brasil Treina – 64 Horas – 2019. </p>
+        <p>Informática Profissionalizante – Escola: Brasil Treina – 75 Horas – 18/04/2017.</p>
+        <h3>Cursos On-Line:</h3>
 
 
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO" target="_blank">React</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/MatheusBattisti" target="_blank">Matheus Battisti - Hora de Codar</a> 06/2022</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PL-u8JWLN6xau0QpzuOTeTI954SsIGEsVA" target="_blank">HTML5 - CSS3</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/HcodeBrasil" target="_blank">hcode</a> 04/2021</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLYGFJHWj9BYqyAxiT02orCWbta5lWsCCL" target="_blank">MVC com PHP</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/MiriamTechCod" target="_blank">MatMiriam TechCod</a> 04/2021</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1" target="_blank">JavaScript e ECMAScript</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em Vídeo</a> 12/2020</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x" target="_blank">POO PHP</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em Vídeo</a> 12/2020</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k" target="_blank">PHP</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em Vídeo</a> 10/2020</div>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r" target="_blank">MySQL</a></div>
-                    <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em Vídeo</a> 10/2020</div>
-                </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO"
+              target="_blank">React</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/MatheusBattisti" target="_blank">Matheus
+              Battisti - Hora de Codar</a> 06/2022</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PL-u8JWLN6xau0QpzuOTeTI954SsIGEsVA"
+              target="_blank">HTML5 - CSS3</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/HcodeBrasil" target="_blank">hcode</a>
+            04/2021</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLYGFJHWj9BYqyAxiT02orCWbta5lWsCCL"
+              target="_blank">MVC com PHP</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/MiriamTechCod" target="_blank">MatMiriam
+              TechCod</a> 04/2021</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1"
+              target="_blank">JavaScript e ECMAScript</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em
+              Vídeo</a> 12/2020</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x"
+              target="_blank">POO PHP</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em
+              Vídeo</a> 12/2020</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k"
+              target="_blank">PHP</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em
+              Vídeo</a> 10/2020</div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-auto"><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r"
+              target="_blank">MySQL</a></div>
+          <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em
+              Vídeo</a> 10/2020</div>
+        </div>
 
-                
-            </div>
-            <div class="col-md-6 col-12" id="cold">
-                <h2>Experiências Profissionais:</h2>
-                <h3>Em Secretaria de Saúde e Unidades de Guaratinguetá</h3>
-                <p>Atuei na implantação do novo sistema de saúde e treinamento dos usuários em todos os setores sendo almoxarifados, enfermeiros, farmácias, médicos, recepções, técnicos em enfermagem, transportes… ― 07/11/2022 - 23/12/2022</p>
-                <h3>Em Liax Tecnologia Da Informação</h3>
-                <p>Desenvolvi e apoiei na sustentação de softwares, auxiliando nas empresas, contratadas a manterem e melhorarem seus sistemas internos, utilizando diversas tecnologias como Java, Visual Basic, Oracle, SQL Server, Spring Boot, entre outras.<br />Efetivo ― Analista Dev Jr &#8544;: 17/03/2022 - 10/06/2022.<br />Estágio: 18/11/2021 - 16/03/2022.</p>
-                <h2>Habilidades:</h2>
-                <ul>
-                    <li>Formatação, limpeza, otimização, configuração e Conselhos;</li>
-                    <li>Recuperação de memórias flash com bad block pela controladora;</li>
-                    <li>PHP: Procedural, MVC, POO;</li>
-                    <li>Java: POO;</li>
-                    <li>JavaScript: Programação Funcional e React JS;</li>
-                    <li>Csharp: Asp.Net, Web Forms, MVC, POO;</li>
-                    <li>UML;</li>
-                    <li>HTML;</li>
-                    <li>CSS: Bootstrap;</li>
-                    <li>Pacote Office e LibreOffice</li>
-                    <li>SGBDs: MySQL, MariaDB e Oracle;</li>
-                    <li>Inglês;</li>
-                    <li>Pesquisa;</li>
-                    <li>Ferramentas de organização e produtividade;</li>
-                    <li>Resolução de problemas;</li>
-                    <li>Trabalho em equipe;</li>
-                    <li>Autodidata.</li>
-                </ul>
-            </div>
-        </article>
-    </main>
-    <script>
-        const cole = document.getElementById("cole");
-        const cold = document.getElementById("cold");
-        const main = document.getElementById("principal")
-        function antesImpressao(){
-            cole.classList.remove("col-md-6", "col-12");
-            cold.classList.remove("col-md-6", "col-12");
-            main.classList.remove("container");
-            cole.classList.add("col-6");
-            cold.classList.add("col-6");
-        }
-        function depoisImpressao(){
-            cole.classList.remove("col-6");
-            cold.classList.remove("col-6");
-            cole.classList.add("col-md-6", "col-12");
-            cold.classList.add("col-md-6", "col-12");
-            main.classList.add("container");
-        }
-    </script>
+
+      </div>
+      <div class="col-md-6 col-12" id="cold">
+        <h2 class="bg-gradient">Experiências Profissionais:</h2>
+        <h3>Em Secretaria de Saúde e Unidades de Guaratinguetá</h3>
+        <p>Atuei na implantação do novo sistema de saúde e treinamento dos usuários em todos os setores sendo
+          almoxarifados, enfermeiros, farmácias, médicos, recepções, técnicos em enfermagem, transportes… –
+          07/11/2022-23/12/2022</p>
+        <h3>Em Liax Tecnologia Da Informação</h3>
+        <p>Desenvolvi e apoiei na sustentação de softwares, auxiliando nas empresas, contratadas a manterem e
+          melhorarem seus sistemas internos, utilizando diversas tecnologias como Java, Visual Basic, Oracle,
+          SQL Server, Spring Boot, entre outras.<br />Efetivo – Analista Dev Jr &#8544;:
+          17/03/2022-10/06/2022.<br />Estágio: 18/11/2021-16/03/2022.</p>
+        <h2 class="bg-gradient">Habilidades:</h2>
+        <ul>
+          <li>Formatação, limpeza, otimização, configuração e Conselhos;</li>
+          <li>Recuperação de memórias flash com bad block pela controladora;</li>
+          <li>PHP: Procedural, MVC, POO;</li>
+          <li>Java: POO;</li>
+          <li>JavaScript: Programação Funcional e React JS;</li>
+          <li>Csharp: Asp.Net, Web Forms, MVC, POO;</li>
+          <li>UML;</li>
+          <li>HTML;</li>
+          <li>CSS: Bootstrap;</li>
+          <li>Pacote Office e LibreOffice</li>
+          <li>SGBDs: MySQL, MariaDB e Oracle;</li>
+          <li>Inglês;</li>
+          <li>Pesquisa;</li>
+          <li>Ferramentas de organização e produtividade;</li>
+          <li>Resolução de problemas;</li>
+          <li>Trabalho em equipe;</li>
+          <li>Autodidata.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+  <script>
+    const cole = document.getElementById("cole");
+    const cold = document.getElementById("cold");
+    const main = document.getElementById("principal");
+    const tema = document.querySelector('[data-bs-theme]');
+    const botao = document.querySelector('#botaoTema');
+    var gitSvg = '';
+    var linkSvg = '';
+    var abertoQR = false;
+    function antesImpressao() {
+      cole.classList.remove("col-md-6", "col-12");
+      cold.classList.remove("col-md-6", "col-12");
+      main.classList.remove("container");
+      cole.classList.add("col-6");
+      cold.classList.add("col-6");
+      botao.innerHTML = '<i class="bi bi-brightness-high"></i>';
+      tema.attributes["data-bs-theme"].nodeValue = 'light'
+    }
+    function depoisImpressao() {
+      cole.classList.remove("col-6");
+      cold.classList.remove("col-6");
+      cole.classList.add("col-md-6", "col-12");
+      cold.classList.add("col-md-6", "col-12");
+      main.classList.add("container");
+    }
+    function modoTema() {
+      if(tema.attributes["data-bs-theme"].nodeValue == 'light'){
+        botao.innerHTML = '<i class="bi bi-moon-stars"></i>';
+        tema.attributes["data-bs-theme"].nodeValue = 'dark';
+      } else {
+        botao.innerHTML = '<i class="bi bi-brightness-high"></i>';
+        tema.attributes["data-bs-theme"].nodeValue = 'light';
+      }
+    }
+    function ativaQR(){
+      let deposito = document.getElementById('depositoSVG');
+      let tamanho = document.getElementById('cabeca').clientHeight;
+      if(abertoQR){
+        document.body.style.setProperty('--altura', 0);
+        deposito.innerHTML = '';
+        abertoQR = !abertoQR;
+      } else {
+        document.body.style.setProperty('--altura', `${tamanho}px`);
+        deposito.innerHTML = '<div class="row"><div class="col-auto">'+ gitSvg +
+                              '</div><div class="col-auto">'+ linkSvg +
+                                '</div></div>';
+        abertoQR = !abertoQR;
+      }
+    }
+    fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/link.svg',{
+      method: 'GET',
+    }).then(resp => resp.text())
+    .then((data) => {
+      linkSvg = data;
+    }).catch(err=>{console.log(err)})
+    fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/git.svg',{
+      method: 'GET',
+    }).then(resp => resp.text())
+    .then((data) => {
+      gitSvg = data;
+    }).catch(err=>{console.log(err)})
+
+  </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="light">
 
 <head>
@@ -13,55 +13,45 @@
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="shortcut icon"
-    href="https://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://valeriohasman.github.io/MenuContexto/estilosProjetos.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
-    :root{
-      --bs-font-sans-serif: 'Nunito', sans-serif;
-      --bs-body-font-size: 0.88rem;
+    #principal {
+      font-size: 0.88rem;
     }
-    [data-bs-theme=light] {
-      --temaCor: #ddf;
-    }
-    [data-bs-theme=dark] {
-      --temaCor: #550;
-    }
-
-    *::selection {
+    #principal *::selection {
       background-color: var(--temaCor);
     }
 
-    a {
+    #principal a {
       color: unset;
       text-decoration: none;
     }
 
-    h2 {
+    #principal h2 {
       background-color: var(--bs-secondary-bg);
       border-radius: 0.3rem;
       margin: 6px 0 1px 0;
     }
 
-    h3,
-    h2 {
+    #principal h3,
+    #principal h2 {
       font-size: 1.11rem;
       padding: 3px 2px 2px 5px;
       margin: 0.5rem 0 0 0;
     }
 
-    h3 {
+    #principal h3 {
       font-style: italic !important;
     }
 
-    p {
+    #principal p {
       text-align: justify;
       margin: 0;
     }
 
-    li,
-    p {
+    #principal li,
+    #principal p {
       line-height: 1.089rem;
     }
 
@@ -81,17 +71,18 @@
       height: 100%;
     }
   </style>
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.js"></script>
+  <script defer src="https://valeriohasman.github.io/MenuContexto/temaProjetos.js"></script>
   <title>Valério_Currículo</title>
 </head>
 
 <body onbeforeprint="antesImpressao()" onafterprint="depoisImpressao()" id="icons-body">
+  <div id="barra"></div>
   <main id="principal" class="container">
     <article class="row">
       <div class="col-12 mt-2">
         <button type="button" class="btn btn-secondary desprint mt-2 mb-2 me-1 bg-gradient" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
         <button type="button" class="btn btn-secondary desprint mt-2 mb-2 me-1 bg-gradient" id="botaoQR" onclick="ativaQR()"><i class="bi bi-qr-code"></i>&nbsp;QR Code</button>
-        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 me-1 bg-gradient" id="botaoTema" onclick="modoTema()"><i class="bi bi-brightness-high"></i></button>
         <h1>Valério Luz Hasman Junior</h1>
         <div class="row justify-content-between">
           <div class="col-auto" id="cabeca">
@@ -109,7 +100,7 @@
           </div>
           <div class="col-auto" id="depositoSVG"></div>
         </div>
-        
+
         <h2 class="bg-gradient">Objetivo:</h2>
         <p>Atuar na área como analista e desenvolvedor de sistemas seja na posição de back-end, front-end ou
           database administrator.</p>
@@ -217,38 +208,30 @@
     </article>
   </main>
   <script>
-    const cole = document.getElementById("cole");
-    const cold = document.getElementById("cold");
-    const main = document.getElementById("principal");
-    const tema = document.querySelector('[data-bs-theme]');
-    const botao = document.querySelector('#botaoTema');
     var gitSvg = '';
     var linkSvg = '';
     var abertoQR = false;
     function antesImpressao() {
+      const tema = document.querySelector('[data-bs-theme]');
+      const main = document.getElementById("principal");
+      const cold = document.getElementById("cold");
+      const cole = document.getElementById("cole");
       cole.classList.remove("col-md-6", "col-12");
       cold.classList.remove("col-md-6", "col-12");
       main.classList.remove("container");
       cole.classList.add("col-6");
       cold.classList.add("col-6");
-      botao.innerHTML = '<i class="bi bi-brightness-high"></i>';
       tema.attributes["data-bs-theme"].nodeValue = 'light'
     }
     function depoisImpressao() {
+      const main = document.getElementById("principal");
+      const cold = document.getElementById("cold");
+      const cole = document.getElementById("cole");
       cole.classList.remove("col-6");
       cold.classList.remove("col-6");
       cole.classList.add("col-md-6", "col-12");
       cold.classList.add("col-md-6", "col-12");
       main.classList.add("container");
-    }
-    function modoTema() {
-      if(tema.attributes["data-bs-theme"].nodeValue == 'light'){
-        botao.innerHTML = '<i class="bi bi-moon-stars"></i>';
-        tema.attributes["data-bs-theme"].nodeValue = 'dark';
-      } else {
-        botao.innerHTML = '<i class="bi bi-brightness-high"></i>';
-        tema.attributes["data-bs-theme"].nodeValue = 'light';
-      }
     }
     function ativaQR(){
       let deposito = document.getElementById('depositoSVG');

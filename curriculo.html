@@ -363,8 +363,15 @@
     var gitSvg = '';
     var linkSvg = '';
     var abertoQR = false;
+    var printAberto = false;
+    
+    const temaArmazenado = localStorage.getItem('theme');
+
+    window.addEventListener('load',()=>{
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',imprimirTema);
+    });
+
     function antesImpressao() {
-      const tema = document.querySelector('[data-bs-theme]');
       const main = document.getElementById("principal");
       const cold = document.getElementById("cold");
       const cole = document.getElementById("cole");
@@ -373,8 +380,41 @@
       main.classList.remove("container");
       cole.classList.add("col-6");
       cold.classList.add("col-6");
-      tema.attributes["data-bs-theme"].nodeValue = 'light'
     }
+
+    function autolight(){
+      let ativo = document.querySelector('.active[data-bs-theme-value]');
+      let valor;
+
+      if(ativo){
+        let ativoCor = ativo.getAttribute('data-bs-theme-value');
+        if(ativoCor == 'light' ^ ativoCor == 'dark'){
+          valor = ativo.getAttribute('data-bs-theme-value');
+        } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
+          valor = temaArmazenado;
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+          valor = 'dark';
+        } else {
+          valor = 'light';
+        }
+      } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
+        valor = temaArmazenado;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+        valor = 'dark';
+      } else {
+        valor = 'light';
+      }
+
+
+      return (printAberto ? valor : 'light')
+    }
+
+    function imprimirTema(){
+      document.documentElement.setAttribute('data-bs-theme', autolight());
+      localStorage.setItem('theme', autolight())
+      printAberto = !printAberto;
+    }
+
     function depoisImpressao() {
       const main = document.getElementById("principal");
       const cold = document.getElementById("cold");
@@ -412,6 +452,8 @@
     .then((data) => {
       gitSvg = data;
     }).catch(err=>{console.log(err)})
+
+
 
   </script>
 </body>

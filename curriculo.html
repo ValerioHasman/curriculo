@@ -11,9 +11,6 @@
   <link rel="shortcut icon" href="https://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://valeriohasman.github.io/MenuContexto/estilosProjetos.css">
   <style>
-    #principal {
-      font-size: 0.88rem;
-    }
     #principal *::selection {
       background-color: var(--temaCor);
     }
@@ -25,34 +22,26 @@
 
     #principal h2 {
       background-color: var(--bs-secondary-bg);
-      border-radius: 0.3rem;
-      margin: 6px 0 1px 0;
-    }
-
-    #principal h3,
-    #principal h2 {
-      font-size: 1.11rem;
-      padding: 3px 2px 2px 5px;
-      margin: 0.5rem 0 0 0;
-    }
-
-    #principal h3 {
-      font-style: italic !important;
     }
 
     #principal p {
-      text-align: justify;
       margin: 0;
-    }
-
-    #principal li,
-    #principal p {
-      line-height: 1.089rem;
     }
 
     @media print {
       .desprint {
         display: none;
+      }
+      #principal {
+        font-size: 0.88rem;
+      }
+      #principal li,
+      #principal p {
+        line-height: 1.089rem;
+      }
+      #principal h3,
+      #principal h2 {
+        font-size: 1.11rem;
       }
     }
 
@@ -167,8 +156,10 @@
   <main id="principal" class="container">
     <article class="row">
       <div class="col-12 mt-2">
-        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 me-1 bg-gradient" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
-        <button type="button" class="btn btn-secondary desprint mt-2 mb-2 me-1 bg-gradient" id="botaoQR" onclick="ativaQR()"><i class="bi bi-qr-code"></i>&nbsp;QR Code</button>
+        <div class="my-4 desprint">
+          <button type="button" class="btn btn-secondary me-1 bg-gradient" onclick="print()"><i class="bi bi-printer"></i>&nbsp;Imprimir currículo</button>
+          <button type="button" class="btn btn-secondary me-1 bg-gradient" id="botaoQR" onclick="ativaQR()"><i class="bi bi-qr-code"></i>&nbsp;QR Code</button>
+        </div>
         <h1>Valério Luz Hasman Junior</h1>
         <div class="row justify-content-between">
           <div class="col-auto" id="cabeca">
@@ -187,29 +178,29 @@
           <div class="col-auto" id="depositoSVG"></div>
         </div>
 
-        <h2 class="bg-gradient">Objetivo:</h2>
+        <h2 class="mt-3 px-2 py-1 mb-3 rounded-2 bg-gradient">Objetivo:</h2>
         <p>Atuar na área como analista e desenvolvedor de sistemas seja na posição de back-end, front-end ou
           database administrator.</p>
       </div>
       <div class="col-md-6 col-12" id="cole">
-        <h2 class="bg-gradient">Formações Acadêmicas:</h2>
-        <h3>Curso Nível Superior:</h3>
+        <h2 class="mt-3 px-2 py-1 mb-3 rounded-2 bg-gradient">Formações Acadêmicas:</h2>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Curso Nível Superior:</h3>
         <p>Análise e Desenvolvimento de Sistemas – Faculdade Tecnológica Estadual, FATEC Guaratinguetá –
           08/2019-07/2022.
         </p>
-        <h3>Curso Comportamento Empreendedor:</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Curso Comportamento Empreendedor:</h3>
         <p>StartUps e Inovação em Negócios – Escola: Unieducar Inteligência Educacional – 09/05/2020 a
           20/05/2020, com carga horária de 4 horas.</p>
-        <h3>Curso da Cisco Networking Academy™:</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Curso da Cisco Networking Academy™:</h3>
         <p>CCNA R&S: Introduction to Networks – FATEC Guaratinguetá – 30/11/2021.</p>
         <p>IT Essentials: PC Hardware and Software – FATEC Guaratinguetá – 02/12/2019.</p>
-        <h3>Curso Nível Técnico:</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Curso Nível Técnico:</h3>
         <p>Técnico em Informática – Escola: Pref.º Alfredo de Barros Santos – 2017-2018.</p>
         <p>2º Grau completo – Escola: Prof.ª Dinah Motta Runha.</p>
-        <h3>Cursos Nível Profissionalizante:</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Cursos Nível Profissionalizante:</h3>
         <p>Lógica de Programação – Escola: Brasil Treina – 64 Horas – 2019. </p>
         <p>Informática Profissionalizante – Escola: Brasil Treina – 75 Horas – 18/04/2017.</p>
-        <h3>Cursos On-Line:</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Cursos On-Line:</h3>
 
 
         <div class="row justify-content-between">
@@ -258,17 +249,17 @@
 
       </div>
       <div class="col-md-6 col-12" id="cold">
-        <h2 class="bg-gradient">Experiências Profissionais:</h2>
-        <h3>Em Secretaria de Saúde e Unidades de Guaratinguetá</h3>
+        <h2 class="mt-3 px-2 py-1 mb-3 rounded-2 bg-gradient">Experiências Profissionais:</h2>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Em Secretaria de Saúde e Unidades de Guaratinguetá</h3>
         <p>Atuei na implantação do novo sistema de saúde e treinamento dos usuários em todos os setores sendo
           almoxarifados, enfermeiros, farmácias, médicos, recepções, técnicos em enfermagem, transportes… –
           07/11/2022-23/12/2022</p>
-        <h3>Em Liax Tecnologia Da Informação</h3>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Em Liax Tecnologia Da Informação</h3>
         <p>Desenvolvi e apoiei na sustentação de softwares, auxiliando nas empresas, contratadas a manterem e
           melhorarem seus sistemas internos, utilizando diversas tecnologias como Java, Visual Basic, Oracle,
           SQL Server, Spring Boot, entre outras.<br />Efetivo – Analista Dev Jr &#8544;:
           17/03/2022-10/06/2022.<br />Estágio: 18/11/2021-16/03/2022.</p>
-        <h2 class="bg-gradient">Habilidades:</h2>
+        <h2 class="mt-3 px-2 py-1 mb-3 rounded-2 bg-gradient">Habilidades:</h2>
         <ul>
           <li>PHP: Procedural, MVC, POO;</li>
           <li>JavaScript: Programação Funcional e React JS;</li>

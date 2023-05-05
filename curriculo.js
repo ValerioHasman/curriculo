@@ -11,6 +11,7 @@ window.addEventListener('load',()=>{
 });
 
 function antesImpressao() {
+  ativaQR();
   const main = document.getElementById("principal");
   const cold = document.getElementById("cold");
   const cole = document.getElementById("cole");
@@ -28,6 +29,7 @@ function antesImpressao() {
   main.querySelectorAll('p, li').forEach((txt)=>{
     txt.style.lineHeight = '1.089rem';
   });
+  ativaQR();
 }
 
 function autolight(){
@@ -63,6 +65,7 @@ function imprimirTema(){
 }
 
 function depoisImpressao() {
+  ativaQR();
   const main = document.getElementById("principal");
   const cold = document.getElementById("cold");
   const cole = document.getElementById("cole");
@@ -80,21 +83,25 @@ function depoisImpressao() {
   main.querySelectorAll('p, li').forEach((txt)=>{
     txt.style.lineHeight = '';
   });
+  ativaQR();
 }
 function ativaQR(){
   let deposito = document.getElementById('depositoSVG');
-  let tamanho = document.getElementById('cabeca').clientHeight;
   if(abertoQR){
     document.body.style.setProperty('--altura', 0);
     deposito.innerHTML = '';
     abertoQR = !abertoQR;
   } else {
-    document.body.style.setProperty('--altura', `${tamanho}px`);
+    defineAlturaQR();
     deposito.innerHTML = '<div class="row"><div class="col-auto">'+ gitSvg +
                           '</div><div class="col-auto">'+ linkSvg +
                             '</div></div>';
     abertoQR = !abertoQR;
   }
+}
+function defineAlturaQR(){
+  let alturaQR = document.getElementById('cabeca').clientHeight;
+  document.body.style.setProperty('--altura', `${alturaQR}px`);
 }
 fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/link.svg',{
   method: 'GET',
@@ -116,7 +123,7 @@ function print2(btn){
     btn.disabled = false;
     depoisImpressao();
     imprimirTema();
-  }, 1200);
+  }, 3500);
   antesImpressao();
   const item = document.getElementById('principal');
 

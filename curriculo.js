@@ -1,17 +1,16 @@
-var gitSvg = '';
-var linkSvg = '';
-var abertoQR = false;
-var printAberto = false;
-var cdcd;
+// var gitSvg = '';
+// var linkSvg = '';
+// var abertoQR = false;
+// var printAberto = false;
 
-const temaArmazenado = localStorage.getItem('theme');
+// const temaArmazenado = localStorage.getItem('theme');
 
-window.addEventListener('load',()=>{
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',imprimirTema);
-});
+// window.addEventListener('load',()=>{
+//   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',imprimirTema);
+// });
 
 function antesImpressao() {
-  ativaQR();
+  // ativaQR();
   const main = document.getElementById("principal");
   const cold = document.getElementById("cold");
   const cole = document.getElementById("cole");
@@ -32,40 +31,40 @@ function antesImpressao() {
   ativaQR();
 }
 
-function autolight(){
-  let ativo = document.querySelector('.active[data-bs-theme-value]');
-  let valor;
+// function autolight(){
+//   let ativo = document.querySelector('.active[data-bs-theme-value]');
+//   let valor;
 
-  if(ativo){
-    let ativoCor = ativo.getAttribute('data-bs-theme-value');
-    if(ativoCor == 'light' ^ ativoCor == 'dark'){
-      valor = ativo.getAttribute('data-bs-theme-value');
-    } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
-      valor = temaArmazenado;
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-      valor = 'dark';
-    } else {
-      valor = 'light';
-    }
-  } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
-    valor = temaArmazenado;
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-    valor = 'dark';
-  } else {
-    valor = 'light';
-  }
+//   if(ativo){
+//     let ativoCor = ativo.getAttribute('data-bs-theme-value');
+//     if(ativoCor == 'light' ^ ativoCor == 'dark'){
+//       valor = ativo.getAttribute('data-bs-theme-value');
+//     } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
+//       valor = temaArmazenado;
+//     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+//       valor = 'dark';
+//     } else {
+//       valor = 'light';
+//     }
+//   } else if(temaArmazenado == 'light' ^ temaArmazenado == 'dark'){
+//     valor = temaArmazenado;
+//   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+//     valor = 'dark';
+//   } else {
+//     valor = 'light';
+//   }
 
-  return (printAberto ? valor : 'light')
-}
+//   return (printAberto ? valor : 'light')
+// }
 
-function imprimirTema(){
-  document.documentElement.setAttribute('data-bs-theme', autolight());
-  localStorage.setItem('theme', autolight())
-  printAberto = !printAberto;
-}
+// function imprimirTema(){
+//   document.documentElement.setAttribute('data-bs-theme', autolight());
+//   localStorage.setItem('theme', autolight())
+//   printAberto = !printAberto;
+// }
 
 function depoisImpressao() {
-  ativaQR();
+  // ativaQR();
   const main = document.getElementById("principal");
   const cold = document.getElementById("cold");
   const cole = document.getElementById("cole");
@@ -85,53 +84,53 @@ function depoisImpressao() {
   });
   ativaQR();
 }
-function ativaQR(){
-  let deposito = document.getElementById('depositoSVG');
-  if(abertoQR){
-    document.body.style.setProperty('--altura', 0);
-    deposito.innerHTML = '';
-    abertoQR = !abertoQR;
-  } else {
-    defineAlturaQR();
-    deposito.innerHTML = '<div class="row"><div class="col-auto">'+ gitSvg +
-                          '</div><div class="col-auto">'+ linkSvg +
-                            '</div></div>';
-    abertoQR = !abertoQR;
-  }
-}
-function defineAlturaQR(){
-  let alturaQR = document.getElementById('cabeca').clientHeight;
-  document.body.style.setProperty('--altura', `${alturaQR}px`);
-}
-fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/link.svg',{
-  method: 'GET',
-}).then(resp => resp.text())
-.then((data) => {
-  linkSvg = data;
-}).catch(err=>{console.log(err)})
-fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/git.svg',{
-  method: 'GET',
-}).then(resp => resp.text())
-.then((data) => {
-  gitSvg = data;
-}).catch(err=>{console.log(err)})
+// function ativaQR(){
+//   let deposito = document.getElementById('depositoSVG');
+//   if(abertoQR){
+//     document.body.style.setProperty('--altura', 0);
+//     deposito.innerHTML = '';
+//     abertoQR = !abertoQR;
+//   } else {
+//     defineAlturaQR();
+//     deposito.innerHTML = '<div class="row"><div class="col-auto">'+ gitSvg +
+//                           '</div><div class="col-auto">'+ linkSvg +
+//                             '</div></div>';
+//     abertoQR = !abertoQR;
+//   }
+// }
+// function defineAlturaQR(){
+//   let alturaQR = document.getElementById('cabeca').clientHeight;
+//   document.body.style.setProperty('--altura', `${alturaQR}px`);
+// }
+// fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/link.svg',{
+//   method: 'GET',
+// }).then(resp => resp.text())
+// .then((data) => {
+//   linkSvg = data;
+// }).catch(err=>{console.log(err)})
+// fetch('https://raw.githubusercontent.com/ValerioHasman/curriculo/main/git.svg',{
+//   method: 'GET',
+// }).then(resp => resp.text())
+// .then((data) => {
+//   gitSvg = data;
+// }).catch(err=>{console.log(err)})
 
-function print2(btn){
-  imprimirTema();
-  btn.disabled = true;
-  setTimeout(()=>{
-    btn.disabled = false;
-    depoisImpressao();
-    imprimirTema();
-  }, 3500);
-  antesImpressao();
-  const item = document.getElementById('principal');
+// function print2(btn){
+//   imprimirTema();
+//   btn.disabled = true;
+//   setTimeout(()=>{
+//     btn.disabled = false;
+//     depoisImpressao();
+//     imprimirTema();
+//   }, 3500);
+//   antesImpressao();
+//   const item = document.getElementById('principal');
 
-  let ops = {
-    margin: 4,
-    filename: "Valério_Currículo.pdf",
-    html2canvas: {scale: 4},
-    jsPDF: { format: "a4", orientation: "portrait"},
-  };
-  html2pdf().set(ops).from(item).save();
-}
+//   let ops = {
+//     margin: 4,
+//     filename: "Valério_Currículo.pdf",
+//     html2canvas: {scale: 4},
+//     jsPDF: { format: "a4", orientation: "portrait"},
+//   };
+//   html2pdf().set(ops).from(item).save();
+// }

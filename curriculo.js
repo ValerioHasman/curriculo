@@ -28,7 +28,8 @@ function antesImpressao() {
   main.querySelectorAll('p, li').forEach((txt)=>{
     txt.style.lineHeight = '1.089rem';
   });
-  ativaQR();
+  //ativaQR();
+  atualizarEstilo(true);
 }
 
 // function autolight(){
@@ -82,7 +83,8 @@ function depoisImpressao() {
   main.querySelectorAll('p, li').forEach((txt)=>{
     txt.style.lineHeight = '';
   });
-  ativaQR();
+  //ativaQR();
+  atualizarEstilo();
 }
 // function ativaQR(){
 //   let deposito = document.getElementById('depositoSVG');
@@ -134,3 +136,21 @@ function depoisImpressao() {
 //   };
 //   html2pdf().set(ops).from(item).save();
 // }
+
+
+window.addEventListener('resize', atualizarEstilo);
+
+atualizarEstilo();
+
+function atualizarEstilo(tres = false) {
+  const habilidades = document.getElementById('habilidades');
+  const larguraDiv = habilidades.clientWidth;
+
+  if (larguraDiv > 340 || tres ) {
+    habilidades.classList.remove('colunas-2');
+    habilidades.classList.add('colunas-3');
+  } else {
+    habilidades.classList.remove('colunas-3');
+    habilidades.classList.add('colunas-2');
+  }
+}

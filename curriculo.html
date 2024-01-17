@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="https://valeriohasman.github.io/portfolio/estilos/estilosProjetos.css">
   <link rel="shortcut icon" href="https://download.seaicons.com/download/i7672/hopstarter/scrap/hopstarter-scrap-client.ico" type="image/x-icon">
   <style>
+
+    #principal{
+      word-wrap: break-word;
+      /* text-wrap: balance; */
+    }
+
     #principal *::selection {
       background-color: var(--temaCor);
     }
@@ -19,7 +25,6 @@
 
     #principal p {
       margin: 0;
-      text-wrap: balance;
     }
 
     @media print {
@@ -40,6 +45,19 @@
       width: 100%;
       height: 100%;
     }
+    
+    .colunas-2 {
+      column-count: 2;
+    }
+
+    .colunas-3 {
+      column-count: 3;
+    }
+
+    .respiro-25 {
+      height: 25vh;
+    }
+
   </style>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <script defer src="curriculo.js"></script>
@@ -62,8 +80,9 @@
         <h1>Valério Luz Hasman Junior</h1>
         <div class="row justify-content-between">
           <div class="col-auto" id="cabeca">
-            <address class="fst-italic">
-              <p>Vila dos Comerciários I, Guaratinguetá/SP</p>
+            <address class="fst-italic mb-1">
+              <p><i class="bi bi-geo-alt-fill"></i>&nbsp;Vila dos Comerciários I, Guaratinguetá/SP</p>
+              <p><i class="bi bi-car-front-fill"></i>&nbsp;A, B, C e D</p>
               <p><a href="tel:012997329785"><i class="bi bi-telephone"></i>&nbsp;<i class="bi bi-whatsapp"></i>&nbsp;(12)
                   99732-9785</a></p>
               <p><a href="mailto:valerio.hasman@gmail.com" target="_blank"><i
@@ -78,7 +97,54 @@
         </div>
 
         <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Objetivo:</h2>
-        <p>Busco uma posição como Analista Desenvolvedor de Sistemas, onde possa aplicar meus conhecimentos em back-end, front-end e administração de banco de dados, usando boas práticas de desenvolvimento e tudo que aprendi com meus estudos com foco na área da TI.</p>
+        <p>Busco uma posição como Analista Desenvolvedor de Sistemas onde possa aplicar meus conhecimentos, usando boas práticas e tudo que aprendi com meus estudos e atuação, tenho paixão por aprender e com desejo de crescer profissionalmente, desenvolver habilidades técnicas e contribuir para projetos inovadores.</p>
+      </div>
+      <div class="col-md-6 col-12" id="cold">
+        <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Experiências Profissionais:</h2>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Analista Desenvolvedor de Sistemas – Liax Tecnologia da Informação LTDA</h3>
+        <p>Desenvolvi e apoiei na sustentação de softwares, auxiliando nas empresas, contratadas a manterem e melhorarem seus sistemas internos, utilizando diversas tecnologias como Java, Visual Basic, Oracle, SQL Server, Spring Boot, entre outras.<br />Efetivo: 17/03/2022-10/06/2022.<br />Estágio: 18/11/2021-16/03/2022.</p>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Instrutor de Informática – Secretaria de Saúde e Unidades de Guaratinguetá</h3>
+        <p>Atuei na implantação do novo sistema de saúde e treinamento dos usuários em todos os setores – 07/11/2022-23/12/2022</p>
+        <h3 class="mt-2 p-1 mb-1 fst-italic">Vendedor de Comércio Varejista – Americanas S.A</h3>
+        <p>Auxiliei na organização dos espaços internos da loja, na precificação de itens, promovi produtos e marcas, demonstrei as funcionalidades e benefícios dos produtos, atendi e apresentei diferentes opções de escolha aos clientes.<br />Temporário: 14/12/2023-24/12/2023</p>
+        <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Habilidades:</h2>
+        <div id="habilidades">
+          PHP;<br />
+          Laravel;<br />
+          JavaScript;<br />
+          Java;<br />
+          Csharp;<br />
+          HTML;<br />
+          CSS;<br />
+          Tags;<br />
+          Semântica;<br />
+          DataTables;<br />
+          Bootstrap;<br />
+          Procedural;<br />
+          jQuery;<br />
+          Programação Funcional;<br />
+          ReactJS;<br />
+          Spring;<br />
+          Asp.Net;<br />
+          Web Forms;<br />
+          MySQL;<br />
+          MariaDB;<br />
+          Oracle;<br />
+          PL/SQL;<br />
+          Pacotes Offices;<br />
+          Git;<br />
+          UML;<br />
+          MER;<br />
+          MVC;<br />
+          POO;<br />
+          SCRUM;<br />
+          Ferramentas de organização e produtividade;<br />
+          Resolução de problemas;<br />
+          Trabalho em equipe;<br />
+          Autodidata;<br />
+          Pesquisa;<br />
+          Inglês.<br />
+        </div>
       </div>
       <div class="col-md-6 col-12" id="cole">
         <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Formações Acadêmicas:</h2>
@@ -146,36 +212,9 @@
           <div class="col-auto"><a href="https://www.youtube.com/c/CursoemV%C3%ADdeo" target="_blank">Curso em
               Vídeo</a> 10/2020</div>
         </div>
-
-
-      </div>
-      <div class="col-md-6 col-12" id="cold">
-        <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Experiências Profissionais:</h2>
-        <h3 class="mt-2 p-1 mb-1 fst-italic">Liax Tecnologia da Informação LTDA</h3>
-        <p>Desenvolvi e apoiei na sustentação de softwares, auxiliando nas empresas, contratadas a manterem e melhorarem seus sistemas internos, utilizando diversas tecnologias como Java, Visual Basic, Oracle, SQL Server, Spring Boot, entre outras.<br />Efetivo – Analista Dev Jr &#8544;: 17/03/2022-10/06/2022.<br />Estágio: 18/11/2021-16/03/2022.</p>
-        <h3 class="mt-2 p-1 mb-1 fst-italic">Secretaria de Saúde e Unidades de Guaratinguetá</h3>
-        <p>Atuei na implantação do novo sistema de saúde e treinamento dos usuários em todos os setores – 07/11/2022-23/12/2022</p>  
-        <h2 class="mt-3 px-4 py-2 mb-3 rounded-5 bg-gradient bg-body-secondary bg-opacity-50">Habilidades:</h2>
-        <ul>
-          <li>PHP: Procedural, MVC, POO;</li>
-          <li>JavaScript: Programação Funcional, POO e ReactJS;</li>
-          <li>Java: POO, Spring;</li>
-          <li>Csharp: Asp.Net, Web Forms, MVC, POO;</li>
-          <li>SGBDs: MySQL, MariaDB e Oracle;</li>
-          <li>HTML: Tags, Semântica; DataTables;</li>
-          <li>CSS: Bootstrap;</li>
-          <li>UML;</li>
-          <li>Pacotes Offices;</li>
-          <li>Inglês;</li>
-          <li>Ferramentas de organização e produtividade;</li>
-          <li>Resolução de problemas;</li>
-          <li>Trabalho em equipe;</li>
-          <li>Autodidata, Pesquisa.</li>
-          <li>Recuperação de memórias flash com bad block pela controladora;</li>
-          <li>Formatação, limpeza, otimização, configuração e Conselhos.</li>
-        </ul>
       </div>
     </article>
+    <div class="respiro-25 desprint"></div>
   </main>
 </body>
 

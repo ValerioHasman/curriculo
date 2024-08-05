@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --bs-body-font-family: "Nunito", var(--bs-font-sans-serif);
+}
+
+textarea {
+  resize: none;
+}
+
+#objetivo {
+  display: none;
+}
+
+@media print {
+  input, textarea {
+    display: none !important;
+  }
+
+  #objetivo {
+    display: block;
+  }
+
+  *:not(:has(> input:checked)):has(> input) {
+    display: none !important;
+  }
+
+  .container {
+    margin: 0 !important;
+    max-width: 100%;
+  }
+
+  * {
+    font-size: revert !important;
+  }
+}

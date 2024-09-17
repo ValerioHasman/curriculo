@@ -21,6 +21,10 @@ h3 {
 }
 
 @media print {
+  :root {
+    --bs-body-color: black;
+  }
+  
   input, textarea {
     display: none !important;
   }

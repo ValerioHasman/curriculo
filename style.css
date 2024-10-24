@@ -2,6 +2,7 @@
 
 :root {
   --bs-body-font-family: "Nunito", var(--bs-font-sans-serif);
+  --bs-body-font-weight: 350;
 }
 
 textarea {
@@ -13,12 +14,12 @@ textarea {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-weight: bold;
 }
 
 h3 {
+  font-weight: 650;
   font-style: italic;
 }
 
